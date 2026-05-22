@@ -77,4 +77,10 @@ To create a minified, production-ready version of the app:
 - Preview: npm run preview
 
 
+## Live Deployment
+This application is deployed on Vercel.
+
+Live URL: 
+https://habit-tracker-pied-eight.vercel.app
+
 
