@@ -1,7 +1,39 @@
 # Habit Tracker Pro
 
 - A high-performance, streak-based habit tracking application built with React, designed for rigorous historical logging and consistency management.
-
+##Folder structure
+```
+habit-tracker/
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── HabitList.jsx
+│   │   ├── HabitRow.jsx
+│   │   ├── WeekGrid.jsx
+│   │   ├── DayCell.jsx
+│   │   └── EmptyState.jsx
+│   │
+│   ├── hooks/
+│   │   └── useHabits.js
+│   │
+│   ├── utils/
+│   │   ├── date.js
+│   │   ├── streak.js
+│   │   └── storage.js
+│   │
+│   ├── styles/
+│   │   ├── globals.css
+│   │   ├── grid.css
+│   │   └── components.css
+│   │
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── README.md
+├── ANSWERS.md
+├── package.json
+└── vite.config.js
+```
 ## 🚀 How to Run Locally
 1. **Clone the repository:**
    `git clone <your-repo-url>`
@@ -35,7 +67,7 @@
 
 - Start the development server: npm run dev
 
-- Access: Open http://localhost:5173 in your   browser.
+- Access: Open http://localhost:5173 in your browser.
 
 ## Production Build
 To create a minified, production-ready version of the app:
