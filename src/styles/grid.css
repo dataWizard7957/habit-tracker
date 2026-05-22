@@ -1,0 +1,25 @@
+/* Container holding the habit metadata AND the 7-day cells */
+.habit-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #1e293b; /* Subtle line separating rows */
+}
+
+/* Fixes the left meta block from shrinking or expanding */
+.habit-meta {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* The Grid Container for the 7 Days */
+.days-grid-row {
+  display: flex;
+  gap: 8px; /* Gap between checkmark cells */
+  flex-grow: 1; /* Lets the grid fill the remaining row space */
+  justify-content: flex-start; /* Keeps cells packed tightly together */
+}
