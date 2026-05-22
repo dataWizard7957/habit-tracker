@@ -1,0 +1,322 @@
+/* ==========================================
+   1. Shared Row Layout (Alignment Fix)
+   ========================================== */
+
+.habit-row,
+.header-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 16px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.habit-row {
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.habit-row:hover {
+  background-color: var(--row-hover);
+}
+
+/* ==========================================
+   2. Header & Navigation Layout
+   ========================================== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 24px;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.header-title-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.week-range-indicator {
+  font-size: 0.95rem;
+  color: var(--muted-text);
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+}
+
+.nav button,
+.btn-nav,
+.theme-toggle {
+  background-color: var(--row-hover);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav button:hover:not(:disabled),
+.btn-nav:hover:not(:disabled),
+.theme-toggle:hover {
+  background-color: var(--border-color);
+}
+
+.nav button:disabled,
+.btn-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   3. Meta, Spacer & Inputs (Layout Locking)
+   ========================================== */
+
+.habit-meta-cell,
+.habit-meta-spacer {
+  width: 220px;
+  min-width: 220px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  overflow: hidden;
+}
+
+.habit-name,
+.rename-input {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  font-weight: 500;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.rename-input {
+  padding: 6px 10px;
+  background: var(--row-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.streak-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  color: var(--muted-text);
+}
+
+.habit-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.habit-row:hover .habit-actions {
+  opacity: 1;
+}
+
+.btn-quiet {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  padding: 4px;
+  color: var(--text-color);
+  font-size: 0.85rem;
+
+  border-radius: 4px;
+}
+
+.btn-quiet:hover {
+  background-color: var(--row-hover);
+}
+
+.add-habit-inline {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.add-habit-inline input {
+  background: var(--row-hover);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.add-habit-inline button {
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+
+  padding: 6px 12px;
+  border-radius: 4px;
+
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ==========================================
+   4. Grid Content
+   ========================================== */
+
+.habit-grid-table {
+  width: 100%;
+  overflow-x: auto;
+
+  padding-bottom: 8px;
+
+  scrollbar-width: thin;
+}
+
+.habit-grid-table::-webkit-scrollbar {
+  height: 6px;
+}
+
+.habit-grid-table::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.days-grid-row {
+  display: flex;
+  gap: 8px;
+
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.grid-header-cell {
+  width: 36px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.day-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted-text);
+}
+
+.date-number {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--muted-text);
+}
+
+.grid-header-cell.active-day .date-number,
+.grid-header-cell.active-day .day-label {
+  color: #3b82f6;
+}
+
+.day-cell {
+  width: 36px;
+  height: 36px;
+
+  background-color: var(--row-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  color: var(--text-color);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Today's cell */
+.day-cell.today {
+  border: 2px solid #3b82f6 !important;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
+  box-sizing: border-box;
+}
+
+/* Checked cell */
+.day-cell.checked {
+  background-color: #22c55e;
+  border-color: #22c55e;
+  color: white;
+}
+
+/* Today + checked */
+.day-cell.today.checked {
+  background-color: #22c55e;
+  border: 2px solid #3b82f6 !important;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  box-sizing: border-box;
+}
+
+/* Future disabled cells */
+.day-cell.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   5. Accessibility Focus States
+   ========================================== */
+
+.day-cell:focus-visible,
+.nav button:focus-visible,
+.btn-nav:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
